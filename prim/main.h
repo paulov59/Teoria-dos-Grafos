@@ -35,6 +35,7 @@ Grafo read_graph_file(const char* file){
             int source, dest, weight;
             split(line, &source, &dest, &weight);
             grafo.adcAresta(source, dest, weight);
+            grafo.adcAresta(dest, source, weight);
         }
         input_file.close();
         return grafo;
