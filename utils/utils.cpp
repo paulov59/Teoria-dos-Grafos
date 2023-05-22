@@ -39,16 +39,11 @@ bool get_arguments(int argc, char** argv, Argument* args) {
   return true;
 }
 
-void help_arguments(string top_text, bool start, bool end) {
+void help_arguments(string top_text) {
   cout << top_text << endl << endl;
   cout << "-h        : show help" << endl;
   cout << "-o <file> : redirect the output to the 'file'" << endl;
   cout << "-f <file> : indicates the 'file' that contains the input graph" << endl;
   cout << "-s        : shows the solution (in ascending order)" << endl;
-  if (start) {
-    cout << "-i        : start vertex" << endl;
-  }
-  if (end) {
-    cout << "-l        : final vertex" << endl;
-  }
+  cout << "-i        : start vertex" << endl;
 }
