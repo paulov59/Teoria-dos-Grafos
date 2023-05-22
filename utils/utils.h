@@ -12,6 +12,6 @@ struct Argument {
 };
 
 bool get_arguments(int argc, char** argv, Argument* args);
-void help_arguments(string top_text, bool start = true, bool end = true);
+void help_arguments(string top_text);
 
 #endif
