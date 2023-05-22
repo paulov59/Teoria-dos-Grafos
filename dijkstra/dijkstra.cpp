@@ -25,7 +25,7 @@ void Grafo::Dijkstra(Grafo grafo, int inicial, const char* output){
     vector<int> distancias;
 
     for (int i=0; i <= v; i++) {
-        distancias.push_back(INT_MAX);
+        distancias.push_back(INF);
         vizinhos.push_back(-1);
     }
 
