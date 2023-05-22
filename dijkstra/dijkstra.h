@@ -22,7 +22,7 @@ class Grafo {
 public:
     Grafo(int vertice);
     void adcAresta(int vertc1, int vertc2, int peso);
-    void Dijkstra(Grafo grafo, int inicial);
+    void Dijkstra(Grafo grafo, int inicial, const char* output);
 };
 
 #endif

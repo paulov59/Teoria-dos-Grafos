@@ -13,7 +13,7 @@ bool get_arguments(int argc, char** argv, Argument* args) {
         args->help = true;
         break;
       case 'o':
-        args->output = new ofstream(optarg);
+        args->output = optarg;
         break;
       case 'f':
         args->input = optarg;

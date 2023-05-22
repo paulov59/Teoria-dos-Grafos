@@ -4,7 +4,7 @@ using namespace std;
 
 struct Argument {
   bool help = false;
-  ostream* output = &cout;
+  const char* output = NULL;
   const char* input = NULL;
   bool solution = false;
   int initial = -1;

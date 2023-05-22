@@ -13,16 +13,16 @@ int main(int argc, char** argv) {
         } else if (args.input) {
             Grafo grafo = read_graph_file(args.input);
             if (args.initial != -1) {
-                grafo.Dijkstra(grafo, args.initial);
+                grafo.Dijkstra(grafo, args.initial, args.output);
             } else {
-                grafo.Dijkstra(grafo, 1);
+                grafo.Dijkstra(grafo, 1, args.output);
             }
         } else {
             Grafo grafo = read_graph_file("graph.in");
             if (args.initial != -1) {
-                grafo.Dijkstra(grafo, args.initial);
+                grafo.Dijkstra(grafo, args.initial, args.output);
             } else {
-                grafo.Dijkstra(grafo, 1);
+                grafo.Dijkstra(grafo, 1, args.output);
             }
         }
     }

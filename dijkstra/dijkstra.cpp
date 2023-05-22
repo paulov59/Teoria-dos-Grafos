@@ -18,7 +18,7 @@ void Grafo::adcAresta(int vertc1, int vertc2, int peso) {
     adj[vertc1] = edge;
 }
 
-void Grafo::Dijkstra(Grafo grafo, int inicial){
+void Grafo::Dijkstra(Grafo grafo, int inicial, const char* output){
     int v = grafo.vertices;
     vector<node*> arestas = grafo.adj; 
     vector<int> vizinhos;
@@ -51,9 +51,17 @@ void Grafo::Dijkstra(Grafo grafo, int inicial){
         }
     }
 
-    for (int i = 1; i < distancias.size(); ++i) {
-        cout << i << ":" << distancias[i] << " ";
+    if (output) {
+        ofstream output_file;
+        output_file.open(output);
+        for (int i = 1; i < distancias.size(); i++) {
+            output_file << i << ":" << distancias[i] << " ";
+        }
+    } else {
+        for (int i = 1; i < distancias.size(); i++) {
+            cout << i << ":" << distancias[i] << " ";
+        }
+        cout << endl;
     }
-    cout << endl;
     
 }
