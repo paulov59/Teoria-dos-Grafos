@@ -61,30 +61,29 @@ void Grafo::Prim(Grafo grafo, int inicial, const char* output, bool solution) {
             current = current->next;
         }
     }
-
-	if (solution) {
-		if (output) {
-			ofstream output_file;
-			output_file.open(output);
-			for (int i = 0; i < prev.size(); i++) {  
+    
+    if (output) {
+        ofstream output_file;
+        output_file.open(output);
+        if (solution) {
+            for (int i = 0; i < prev.size(); i++) {  
                 if (prev[i] == -1) continue;
 				output_file << "(" << prev[i] << "," << i << ") ";
             }
             output_file << endl;
-		} else {
-			for (int i = 0; i < prev.size(); i++) {  
+        } else {
+            output_file << custo_total(custos) << endl;
+        }
+        output_file.close();
+    } else {
+        if (solution) {
+            for (int i = 0; i < prev.size(); i++) {  
                 if (prev[i] == -1) continue;
 				cout << "(" << prev[i] << "," << i << ") ";
             }
             cout << endl;
-		}
-	} else {
-		if (output) {
-			ofstream output_file;
-			output_file.open(output);
-			output_file << custo_total(custos) << endl;
-		} else {
-			cout << custo_total(custos) << endl;
-		}
-	}
+        } else {
+            cout << custo_total(custos) << endl;
+        }
+    }
 }

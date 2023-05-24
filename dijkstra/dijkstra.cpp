@@ -57,6 +57,7 @@ void Grafo::Dijkstra(Grafo grafo, int inicial, const char* output){
         for (int i = 1; i < distancias.size(); i++) {
             output_file << i << ":" << distancias[i] << " ";
         }
+        output_file.close();
     } else {
         for (int i = 1; i < distancias.size(); i++) {
             cout << i << ":" << distancias[i] << " ";

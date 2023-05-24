@@ -86,28 +86,28 @@ void Grafo::Kruskal(Grafo grafo, const char* output, bool solution) {
             Union(c1, c2, parent, rank);
         }
     }
+    
 
-    if (solution) {
-		if (output) {
-			ofstream output_file;
-			output_file.open(output);
-			for (int i = 0; i < MST.size(); i++) {  
+    if (output) {
+        ofstream output_file;
+        output_file.open(output);
+        if (solution) {
+            for (int i = 0; i < MST.size(); i++) {  
                 output_file << "(" << MST[i].src << "," << MST[i].destino << ") ";
             }
             output_file << endl;
-		} else {
-			for (int i = 0; i < MST.size(); i++) {  
+        } else {
+            output_file << peso_total(MST) << endl;
+        }
+        output_file.close();
+    } else {
+        if (solution) {
+            for (int i = 0; i < MST.size(); i++) {  
                 cout << "(" << MST[i].src << "," << MST[i].destino << ") ";
             }
             cout << endl;
-		}
-	} else {
-		if (output) {
-			ofstream output_file;
-			output_file.open(output);
-			output_file << peso_total(MST) << endl;
-		} else {
-			cout << peso_total(MST) << endl;
-		}
-	}
+        } else {
+            cout << peso_total(MST) << endl;
+        }
+    }
 }

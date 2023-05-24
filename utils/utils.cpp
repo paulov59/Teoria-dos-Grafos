@@ -39,11 +39,11 @@ bool get_arguments(int argc, char** argv, Argument* args) {
   return true;
 }
 
-void help_arguments(string top_text) {
+void help_arguments(string top_text, bool dijkstra) {
   cout << top_text << endl << endl;
   cout << "-h        : show help" << endl;
   cout << "-o <file> : redirect the output to the 'file'" << endl;
   cout << "-f <file> : indicates the 'file' that contains the input graph" << endl;
-  cout << "-s        : shows the solution (in ascending order)" << endl;
+  if (!dijkstra) cout << "-s        : shows the solution (in ascending order)" << endl;
   cout << "-i        : start vertex" << endl;
 }
