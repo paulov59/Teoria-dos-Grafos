@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     bool param = get_arguments(argc, argv, &args);
     if (param) {
         if (args.help) {
-            help_arguments("O algoritmo de Prim encontra a AGM (Árvore geradora mínima) do grafo, com complexidade O(|E| log|V|).", false);
+            help_arguments("O algoritmo de Prim encontra a AGM (Árvore geradora mínima) do grafo, com complexidade O(|E| log|V|).", true);
         } else if (args.input) {
             Grafo grafo = read_graph_file(args.input);
             if (args.initial != -1) {

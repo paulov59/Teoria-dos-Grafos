@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     bool param = get_arguments(argc, argv, &args);
     if (param) {
         if (args.help) {
-            help_arguments("O Algoritmo de Bellman-Ford é um algoritmo de busca de caminho mínimo em um grafo orientado e ponderado, podendo inclusive ter pesos negativo.", true);
+            help_arguments("O Algoritmo de Bellman-Ford é um algoritmo de busca de caminho mínimo em um grafo orientado e ponderado, podendo inclusive ter pesos negativo.", false);
         } else if (args.input) {
             Grafo grafo = read_graph_file(args.input);
             if (args.initial != -1) {

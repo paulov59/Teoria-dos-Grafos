@@ -12,6 +12,6 @@ struct Argument {
 };
 
 bool get_arguments(int argc, char** argv, Argument* args);
-void help_arguments(string top_text, bool dijkstra);
+void help_arguments(string top_text, bool solution);
 
 #endif
