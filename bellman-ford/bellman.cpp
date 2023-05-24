@@ -48,7 +48,7 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
             int w = vizinhos->peso;
             vizinhos = vizinhos->next;
             if (distancias[j] + w < distancias[d] && distancias[j] != INT_MAX) {
-                printf("Ciclo negativo detectado!\n");
+                cout << "Ciclo negativo detectado!" << endl;
                 break;
             }
         }

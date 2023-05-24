@@ -21,7 +21,4 @@ public:
     void Bellman_Ford(Grafo grafo, int inicial, const char* output);
 };
 
-void printArr(int dist[], int n);
-
-
 #endif
