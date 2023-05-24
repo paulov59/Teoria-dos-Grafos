@@ -34,7 +34,7 @@ void Grafo::Prim(Grafo grafo, int inicial, const char* output, bool solution) {
     vector<bool> visitados;
 
     for(int i=0; i <= grafo.vertices; i++){
-        custos.push_back(INT_MAX);
+        custos.push_back(INF);
         prev.push_back(-1);  
         visitados.push_back(false);
     }

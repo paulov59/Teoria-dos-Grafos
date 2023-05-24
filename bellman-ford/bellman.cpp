@@ -25,7 +25,7 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
     vector<int> distancias;
 
     for (int i = 0; i <= v; i++) {
-        distancias.push_back(INT_MAX);
+        distancias.push_back(INF);
     }
     distancias[inicial] = 0;
 
@@ -33,7 +33,7 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
         for (int j = 1; j <= v; j++) {
             node* vizinhos = arestas[j];
             while(vizinhos != NULL) {
-                if (distancias[j] + vizinhos->peso < distancias[vizinhos->destino] && distancias[j] != INT_MAX) {
+                if (distancias[j] + vizinhos->peso < distancias[vizinhos->destino] && distancias[j] != INF) {
                     distancias[vizinhos->destino] = distancias[j] + vizinhos->peso;
                 }
                 vizinhos = vizinhos->next;
@@ -47,7 +47,7 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
             int d = vizinhos->destino;
             int w = vizinhos->peso;
             vizinhos = vizinhos->next;
-            if (distancias[j] + w < distancias[d] && distancias[j] != INT_MAX) {
+            if (distancias[j] + w < distancias[d] && distancias[j] != INF) {
                 cout << "Ciclo negativo detectado!" << endl;
                 break;
             }
@@ -58,12 +58,20 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
         ofstream output_file;
         output_file.open(output);
         for (int i = 1; i < distancias.size(); i++) {
-            output_file << i << ":" << distancias[i] << " ";
+            if (distancias[i] == INF) {
+                output_file << i << ":" << "-1" << " ";
+            } else {
+                output_file << i << ":" << distancias[i] << " ";
+            }
         }
         output_file.close();
     } else {
         for (int i = 1; i < distancias.size(); i++) {
-            cout << i << ":" << distancias[i] << " ";
+            if (distancias[i] == INF) {
+                cout << i << ":" << "-1" << " ";
+            } else {
+                cout << i << ":" << distancias[i] << " ";
+            }
         }
         cout << endl;
     }
