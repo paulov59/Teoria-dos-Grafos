@@ -55,12 +55,20 @@ void Grafo::Dijkstra(Grafo grafo, int inicial, const char* output){
         ofstream output_file;
         output_file.open(output);
         for (int i = 1; i < distancias.size(); i++) {
-            output_file << i << ":" << distancias[i] << " ";
+            if (distancias[i] == INF) {
+                output_file << i << ":" << "-1" << " ";
+            } else {
+                output_file << i << ":" << distancias[i] << " ";
+            }
         }
         output_file.close();
     } else {
         for (int i = 1; i < distancias.size(); i++) {
-            cout << i << ":" << distancias[i] << " ";
+            if (distancias[i] == INF) {
+                cout << i << ":" << "-1" << " ";
+            } else {
+                cout << i << ":" << distancias[i] << " ";
+            }
         }
         cout << endl;
     }
