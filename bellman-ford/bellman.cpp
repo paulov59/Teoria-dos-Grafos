@@ -49,7 +49,7 @@ void Grafo::Bellman_Ford(Grafo grafo, int inicial, const char* output) {
             vizinhos = vizinhos->next;
             if (distancias[j] + w < distancias[d] && distancias[j] != INF) {
                 cout << "Ciclo negativo detectado!" << endl;
-                break;
+                return;
             }
         }
     }
